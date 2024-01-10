@@ -2,7 +2,6 @@ package com.dev.backend.controller;
 
 import com.dev.backend.entity.State;
 import com.dev.backend.service.StateService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
