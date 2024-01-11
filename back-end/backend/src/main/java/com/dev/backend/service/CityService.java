@@ -1,7 +1,6 @@
 package com.dev.backend.service;
 
 import com.dev.backend.entity.City;
-import com.dev.backend.entity.State;
 import com.dev.backend.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

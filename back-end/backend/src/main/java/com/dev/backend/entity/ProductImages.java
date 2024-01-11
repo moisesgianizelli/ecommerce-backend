@@ -6,9 +6,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Entity
-@Table(name = "city")
+@Table(name = "productImages")
 @Data
-public class City {
+public class ProductImages {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -16,8 +16,9 @@ public class City {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="idState")
-    private State state;
+    @JoinColumn(name="idProduct")
+    private Product product;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateCreation;
     @Temporal(TemporalType.TIMESTAMP)
