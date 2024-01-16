@@ -19,11 +19,16 @@ public class PersonClientService {
 
     @Autowired
     private PermissionsPersonService permissionsPersonService;
+
+    @Autowired
+    private EmailService emailService;
+
     public Person register(PersonClientRequestDTO personClientRequestDTO){
         Person person = new PersonClientRequestDTO().converter(personClientRequestDTO);
         person.setDateCreation(new Date());
         Person personNew = personRepository.saveAndFlush(person);
         permissionsPersonService.linkPersonPermissionsClient(personNew);
+        emailService.sendEmailText(personNew.getEmail(),"Register in the store", "The register was successfully done");
         return personNew;
     }
 
