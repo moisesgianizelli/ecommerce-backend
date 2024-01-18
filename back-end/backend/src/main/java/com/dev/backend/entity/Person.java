@@ -18,6 +18,9 @@ public class Person {
     private String name;
     private String cpf;
     private String email;
+    private String codeRecoveringPassword;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateSendingCode;
     private String password;
     private String address;
     private String cep;
