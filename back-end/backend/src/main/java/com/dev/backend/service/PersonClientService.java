@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PersonClientService {
@@ -28,7 +30,10 @@ public class PersonClientService {
         person.setDateCreation(new Date());
         Person personNew = personRepository.saveAndFlush(person);
         permissionsPersonService.linkPersonPermissionsClient(personNew);
-        emailService.sendEmailText(personNew.getEmail(),"Register in the store", "The register was successfully done");
+        Map<String, Object> properMap = new HashMap<>();
+        properMap.put("name", personNew.getName());
+        properMap.put("message", "The register was successfully done");
+        emailService.sendEmailTemplate(personNew.getEmail(), "Register", properMap );
         return personNew;
     }
 
