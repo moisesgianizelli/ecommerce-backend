@@ -1,0 +1,9 @@
+<html>
+
+<head></head>
+<body>
+    <h3>Hi, ${name}</h3>
+    <br/>
+    <p>${message}</p>
+</body>
+</html>
