@@ -16,21 +16,25 @@ public class StateController {
     private StateService stateService;
 
     @GetMapping("/")
+    @CrossOrigin("http://localhost:3000")
     public List<State> searchAll(){
         return stateService.searchAll();
     }
 
     @PostMapping("/")
+    @CrossOrigin("http://localhost:3000")
     public State insert(@RequestBody State state){
         return stateService.insert(state);
     }
 
     @PutMapping("/")
+    @CrossOrigin("http://localhost:3000")
     public State modify(@RequestBody State state){
         return stateService.modify(state);
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin("http://localhost:3000")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id){
         stateService.delete(id);
         return ResponseEntity.ok().build();
